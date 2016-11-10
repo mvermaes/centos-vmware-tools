@@ -2,8 +2,13 @@
 This procedure installs the open source version of VMware Tools (open-vm-tools) and then compiles and installs the HGFS driver which allows use of VMware's native shared folder support. It is specifically for the official CentOS Vagrant boxes published at https://atlas.hashicorp.com/centos.
 
 ## Requirements
-* Latest version of VMware Fusion Pro (8.5) or Workstation Pro (12.5). Other versions are untested but should work
-* Latest version of Vagrant (1.8.6) and Vagrant VMware plugin (4.0.13)
+* Current version of VMware Fusion Pro or Workstation Pro. Tested on:
+  * Fusion Pro 8.5
+  * Workstation Pro 12.5
+  * Other versions are untested but should work
+* Current version of Vagrant and Vagrant VMware plugin. Latest tested:
+  * Vagrant 1.8.7 (note: requires workaround per https://github.com/mitchellh/vagrant/issues/7969)
+  * Vagrant VMware plugin 4.0.14
 * Additional steps may be required if the kernel in the Vagrant guest is updated
 
 ## Host preparation
