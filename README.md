@@ -43,7 +43,7 @@ tar xzf ${TOOLS_PATH} -C /tmp/vmware-archive
 ```
 
 #### Install VMware Tools
-Both --force-install and --default are required to accept all default options, as we have already installed open-vm-tools. See https://kb.vmware.com/kb/2126368 for more details:
+Both --force-install and --default are required to avoid prompting, as we have already installed open-vm-tools. See https://kb.vmware.com/kb/2126368 for more details:
 ```
 sudo /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install --default
 ```
@@ -56,7 +56,7 @@ rm -rf /tmp/vmware /tmp/vmware-archive /vagrant/*.iso
 ```
 
 ## Create a new shared folder using VMware shared folders
-It currently isn't possible to override the default rsync synced_folder for /vagrant (this a known issue). As a workaround, use a different name for the mount point in the guest, by adding a line like this to the Vagrantfile before the final `end`:
+It currently isn't possible to override the default rsync synced_folder for /vagrant (this is a known issue). As a workaround, use a different name for the mount point in the guest, by adding a line like this to the Vagrantfile before the final `end`:
 ```
 config.vm.synced_folder ".", "/vagrant2"
 ```
