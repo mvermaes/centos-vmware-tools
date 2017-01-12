@@ -9,7 +9,7 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
 ## Requirements
 * Current version of VMware Fusion Pro or Workstation Pro. Tested on:
   * Fusion Pro 8.5
-  * Workstation Pro 12.5 (last tested box version: v1610)
+  * Workstation Pro 12.5
   * Other versions are untested but should work
 * Current version of Vagrant and Vagrant VMware plugin. Latest tested:
   * Vagrant 1.9.1
