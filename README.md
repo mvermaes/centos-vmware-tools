@@ -14,7 +14,6 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
 * Current version of Vagrant and Vagrant VMware plugin. Latest tested:
   * Vagrant 1.9.1
   * Vagrant VMware plugin 4.0.15
-* Additional steps may be required if the kernel in the Vagrant guest is updated
 
 ## Host preparation
 * Copy the VMware Tools installer from the VMware application folder to the guest. The default locations for the installer are:
@@ -23,6 +22,15 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
 * Use `vagrant rsync` (OS X) or a SMB synced folder (Windows) to copy the iso into the guest's /vagrant directory
 
 ## Commands to run within Vagrant guest
+#### Update and reboot (if needed)
+This is only required if the kernel has been updated since the box was released, so that the kernel-devel package matches the running kernel version
+
+```
+sudo yum -y update
+exit
+vagrant reload # On host
+```
+
 #### Install the EPEL repository (CentOS 6 only)
 ```
 sudo yum -y install epel-release
