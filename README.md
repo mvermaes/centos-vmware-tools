@@ -62,7 +62,7 @@ sudo /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install 
 ```
 sudo umount /tmp/vmware
 rm -rf /tmp/vmware /tmp/vmware-archive /vagrant/*.iso
-# linux.iso can also be removed from the host
+# linux.iso can also be removed from the host if still present (Mac)
 ```
 
 ## Create a new shared folder using VMware shared folders
