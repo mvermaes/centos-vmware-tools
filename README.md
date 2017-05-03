@@ -9,7 +9,7 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
   * Fusion Pro 8.5.6
   * Workstation Pro 12.5.5
 * Current version of Vagrant and Vagrant VMware plugin. Latest tested:
-  * Vagrant 1.9.3 (manual fix required for SMB folders - see https://github.com/mitchellh/vagrant/issues/8404)
+  * Vagrant 1.9.4
   * Vagrant VMware plugin 4.0.18
 
 ## Host preparation
