@@ -1,0 +1,64 @@
+{
+  "builders": [
+    {
+      "headless": "true",
+      "name": "centos6",
+      "shutdown_command": "echo vagrant | sudo -S /sbin/halt -h -p",
+      "source_path": "{{ user `centos6_path` }}",
+      "ssh_private_key_file": "{{ user `home_dir` }}/.vagrant.d/insecure_private_key",
+      "ssh_username": "vagrant",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-vmx",
+      "vmx_data": {
+        "ethernet0.connectiontype": "nat",
+        "guestOS": "centos-64"
+      }
+    },
+    {
+      "headless": "true",
+      "name": "centos7",
+      "shutdown_command": "echo vagrant | sudo -S /sbin/halt -h -p",
+      "source_path": "{{ user `centos7_path` }}",
+      "ssh_private_key_file": "{{ user `home_dir` }}/.vagrant.d/insecure_private_key",
+      "ssh_username": "vagrant",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-vmx",
+      "vmx_data": {
+        "ethernet0.connectiontype": "nat",
+        "guestOS": "centos-64"
+      }
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "output": "{{build_name}}-{{ user `image_version` }}.box",
+        "type": "vagrant"
+      },
+      {
+        "access_token": "{{ user `cloud_token` }}",
+        "box_tag": "mvermaes/{{build_name}}-vmware-tools",
+        "type": "vagrant-cloud",
+        "version": "{{ user `image_version` }}"
+      }
+    ]
+  ],
+  "provisioners": [
+    {
+      "execute_command": "echo vagrant | {{.Vars}} sudo -S -E sh -eux {{.Path}}",
+      "scripts": [
+        "update-and-reboot.sh",
+        "centos-vmware-tools.sh",
+        "minimize.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "centos6_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-6/1705.01/vmware_desktop/centos-6-1-1.x86_64.vmx",
+    "centos7_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-7/1705.01/vmware_desktop/centos-7-1-1.x86_64.vmx",
+    "cloud_token": "{{ env `ATLAS_TOKEN` }}",
+    "home_dir": "{{ env `HOME` }}",
+    "image_version": "0.1.{{ isotime \"200601020304\" }}"
+  }
+}

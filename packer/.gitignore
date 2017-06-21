@@ -1,0 +1,3 @@
+*.box
+output-centos*
+packer_cache
