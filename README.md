@@ -5,12 +5,12 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
 * These steps have only been tested with the versions of VMware and Vagrant mentioned below.
 
 ## Requirements
-* Latest version of VMware Fusion Pro or Workstation Pro. Tested on:
-  * Fusion Pro 8.5.6
-  * Workstation Pro 12.5.6
-* Latest version of Vagrant and Vagrant VMware plugin. Tested on:
-  * Vagrant 1.9.5
-  * Vagrant VMware plugin 4.0.19
+* Latest version of VMware Fusion Pro or Workstation Pro. Last tested on:
+  * Fusion Pro 8.5.8
+  * Workstation Pro 12.5.7
+* Latest version of Vagrant and Vagrant VMware plugin. Last tested on:
+  * Vagrant 1.9.7
+  * Vagrant VMware plugin 4.0.24
 
 ## Host preparation
 * Copy the VMware Tools installer from the VMware application folder to the guest. The default locations for the installer are:
