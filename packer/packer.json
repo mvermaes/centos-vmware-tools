@@ -56,8 +56,8 @@
     }
   ],
   "variables": {
-    "centos6_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-6/1708.01/vmware_desktop/centos-6-1-1.x86_64.vmx",
-    "centos7_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-7/1708.01/vmware_desktop/centos-7-1-1.x86_64.vmx",
+    "centos6_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-6/1710.01/vmware_desktop/centos-6-1-1.x86_64.vmx",
+    "centos7_path": "{{ env `HOME` }}/.vagrant.d/boxes/centos-VAGRANTSLASH-7/1710.01/vmware_desktop/centos-7-1-1.x86_64.vmx",
     "cloud_token": "{{ env `ATLAS_TOKEN` }}",
     "home_dir": "{{ env `HOME` }}",
     "image_version": "0.1.{{ isotime \"200601020304\" }}"
