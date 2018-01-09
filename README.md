@@ -11,10 +11,10 @@ This procedure installs the open source version of VMware Tools (open-vm-tools) 
 * CentOS Vagrant box 1710.01
 
 ### Tested versions (Windows)
-* VMware Workstation Pro 12.5.7
-* Vagrant 2.0.0
-* Vagrant VMware plugin 4.0.24
-* CentOS Vagrant box 1708.01
+* VMware Workstation Pro 14.1.0
+* Vagrant 2.0.1
+* Vagrant VMware plugin 5.0.4
+* CentOS Vagrant box 1710.01
 
 ## Host preparation
 * Copy the VMware Tools installer from the VMware application folder to the guest. The default locations for the installer are:
