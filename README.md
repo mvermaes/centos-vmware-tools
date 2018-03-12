@@ -12,13 +12,10 @@ VMware Fusion Pro | 10.1.1
 Vagrant | 2.0.2
 Vagrant VMware plugin | 5.0.4
 
-### Tested versions (Windows)
-Component | Version
---|--
-CentOS box | 1710.01
-VMware Fusion Pro | 14.10
-Vagrant | 2.0.1
-Vagrant VMware plugin | 5.0.4
+### Windows support
+This procedure is no longer tested directly on a Windows host.
+
+The steps have remained largely unchanged for several years, and are expected to remain valid until at least the next major release of RHEL/CentOS.
 
 ## Host preparation
 * Copy the VMware Tools installer from the VMware application folder to the guest. The default locations for the installer are:
