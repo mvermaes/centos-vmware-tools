@@ -1,30 +1,34 @@
 ## Overview
-This procedure installs the open source version of VMware Tools (open-vm-tools) and then compiles and installs the HGFS driver which allows use of VMware's native shared folder support. It is specifically for the official CentOS Vagrant boxes published at https://app.vagrantup.com/centos.
+This procedure installs the open source version of VMware Tools (`open-vm-tools`) and then compiles and installs the HGFS driver which allows use of VMware's native shared folder support. It is specifically for use with the official CentOS Vagrant boxes published at https://app.vagrantup.com/centos.
 
 ## Requirements
 * Most versions of VMware and Vagrant should work with these instructions. The latest version of the Vagrant VMware plugin should always be used.
 
 ### Tested versions (MacOS)
-* VMware Fusion Pro 10.0.1
-* Vagrant 2.0.1
-* Vagrant VMware plugin 5.0.4
-* CentOS Vagrant box 1710.01
+Component | Version
+--|--
+CentOS box | 1710.01
+VMware Fusion Pro | 10.0.1
+Vagrant | 2.0.1
+Vagrant VMware plugin | 5.0.4
 
 ### Tested versions (Windows)
-* VMware Workstation Pro 14.1.0
-* Vagrant 2.0.1
-* Vagrant VMware plugin 5.0.4
-* CentOS Vagrant box 1710.01
+Component | Version
+--|--
+CentOS box | 1710.01
+VMware Fusion Pro | 14.10
+Vagrant | 2.0.1
+Vagrant VMware plugin | 5.0.4
 
 ## Host preparation
 * Copy the VMware Tools installer from the VMware application folder to the guest. The default locations for the installer are:
-  * `/Applications/VMware\ Fusion.app/Contents/Library/isoimages/linux.iso` (OS X)
+  * `/Applications/VMware\ Fusion.app/Contents/Library/isoimages/linux.iso` (MacOS)
   * `C:\Program Files (x86)\VMware\VMware Workstation\linux.iso` (Windows)
-* Use `vagrant rsync` (OS X) or a SMB synced folder (Windows) to copy the iso into the guest's /vagrant directory
+* Use `vagrant rsync` (MacOS) or a SMB synced folder (Windows) to copy the iso into the guest's `/vagrant` directory
 
 ## Commands to run within Vagrant guest
 #### Update and reboot (if needed)
-This is only required if the kernel has been updated since the box was released, so that the kernel-devel package matches the running kernel version
+This is only required if the kernel has been updated since the box was released, so that the `kernel-devel` package matches the running kernel version
 
 ```
 sudo yum -y update
@@ -57,7 +61,7 @@ tar xzf ${TOOLS_PATH} -C /tmp/vmware-archive
 ```
 
 #### Install VMware Tools
-Both --force-install and --default are required to avoid prompting, as we have already installed open-vm-tools. See https://kb.vmware.com/kb/2126368 for more details:
+Both `--force-install` and `--default` are required to avoid prompting, as we have already installed `open-vm-tools`. See https://kb.vmware.com/kb/2126368 for more details:
 ```
 sudo /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install --default
 ```
@@ -66,11 +70,11 @@ sudo /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install 
 ```
 sudo umount /tmp/vmware
 rm -rf /tmp/vmware /tmp/vmware-archive /vagrant/*.iso
-# linux.iso can also be removed from the host if still present (Mac)
+# linux.iso can also be removed from the host if still present (MacOS)
 ```
 
 ## Create a new shared folder using VMware shared folders
-It currently isn't possible to override the default rsync synced_folder for /vagrant (this is a known issue). As a workaround, use a different name for the mount point in the guest, by adding a line like this to the Vagrantfile before the final `end`:
+It currently isn't possible to override the default rsync `synced_folder` for `/vagrant` (this is a known issue). As a workaround, use a different name for the mount point in the guest, by adding a line like this to the `Vagrantfile` before the final `end`:
 ```
 config.vm.synced_folder ".", "/vagrant2"
 ```
