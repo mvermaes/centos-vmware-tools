@@ -10,7 +10,7 @@ Component | Version
 CentOS box | 1802.01
 VMware Fusion Pro | 10.1.1
 Vagrant | 2.0.2
-Vagrant VMware plugin | 5.0.4
+Vagrant VMware Desktop Plugin | 1.0.1
 
 ### Windows support
 This procedure is no longer tested directly on a Windows host.
