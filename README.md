@@ -7,10 +7,10 @@ This procedure installs the open source version of VMware Tools (`open-vm-tools`
 ### Tested versions (MacOS)
 Component | Version
 --|--
-CentOS box | 1802.01
+CentOS box | 1803.01
 VMware Fusion Pro | 10.1.1
-Vagrant | 2.0.2
-Vagrant VMware Desktop Plugin | 1.0.1
+Vagrant | 2.0.4
+Vagrant VMware Desktop Plugin | 1.0.3
 
 ### Windows support
 This procedure is no longer tested directly on a Windows host.
